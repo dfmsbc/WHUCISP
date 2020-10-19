@@ -1,4 +1,5 @@
 import java.sql.*;
+
 public class UserConnection {
     //Static instance of connection, only one will ever exist
     private static Connection connection = null;

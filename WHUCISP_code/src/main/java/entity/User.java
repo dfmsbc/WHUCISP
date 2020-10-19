@@ -1,3 +1,5 @@
+package entity;
+
 public class User {
 
     private StringBuilder UserName;   //登陆时用的用户名
