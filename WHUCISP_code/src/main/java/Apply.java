@@ -9,11 +9,11 @@ public class Apply {
     private StringBuilder SelfIntro;
 
     public Apply(StringBuilder name, StringBuilder schoolID, StringBuilder club, StringBuilder telephone, StringBuilder selfIntro) {
-        Name = name;
-        SchoolID = schoolID;
-        Club = club;
-        Telephone = telephone;
-        SelfIntro = selfIntro;
+        Name = new StringBuilder(name);
+        SchoolID = new StringBuilder(schoolID);
+        Club = new StringBuilder(club);
+        Telephone = new StringBuilder(telephone);
+        SelfIntro = new StringBuilder(selfIntro);
     }
 
 

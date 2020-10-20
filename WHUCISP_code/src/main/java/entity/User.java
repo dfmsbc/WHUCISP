@@ -7,14 +7,20 @@ public class User {
     private StringBuilder SchoolID;   //本人学号
 
     public User(StringBuilder userName, StringBuilder name, StringBuilder schoolID){
-        UserName = userName;
-        Name = name;
-        SchoolID = schoolID;
+        UserName = new StringBuilder(userName);
+        Name = new StringBuilder(name);
+        SchoolID = new StringBuilder(schoolID);
+    }
+
+    public User(){
+        UserName = new StringBuilder("匿名");
+        Name = new StringBuilder("");
+        SchoolID = new StringBuilder("");
     }
 
     //读取设置学号
     public void setSchoolID(StringBuilder schoolID) {
-        SchoolID = schoolID;
+        SchoolID = new StringBuilder(schoolID);
     }
 
     public StringBuilder getSchoolID() {
@@ -24,7 +30,7 @@ public class User {
 
     //读取设置学生真名
     public void setName(StringBuilder name) {
-        Name = Name;
+        Name = new StringBuilder(name);
     }
 
     public StringBuilder getName() {
@@ -33,12 +39,11 @@ public class User {
 
     //读取设置学生用户名
     public void setUserName(StringBuilder userName) {
-        UserName = userName;
+        UserName = new StringBuilder(userName);
     }
 
     public StringBuilder getUserName() {
         return UserName;
     }
-
 
 }
