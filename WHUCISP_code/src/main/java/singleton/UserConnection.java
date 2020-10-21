@@ -19,7 +19,7 @@ public class UserConnection {
     private static void initConnection() {
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            String url = "jdbc:MySQL://39.97.254.226:3306/Users";
+            String url = "jdbc:MySQL://39.97.254.226:3306/whucisp";
             String user = "root";
             String pw = "200087";
             UserConnection.connection = DriverManager.getConnection(url, user, pw);

@@ -2,47 +2,47 @@ package entity;
 
 public class User {
 
-    private StringBuilder UserName;   //登陆时用的用户名
-    private StringBuilder Name;       //本人真实姓名
-    private StringBuilder SchoolID;   //本人学号
+    private String UserName;   //登陆时用的用户名
+    private String Name;       //本人真实姓名
+    private String SchoolID;   //本人学号
 
-    public User(StringBuilder userName, StringBuilder name, StringBuilder schoolID){
-        UserName = new StringBuilder(userName);
-        Name = new StringBuilder(name);
-        SchoolID = new StringBuilder(schoolID);
+    public User(String userName, String name, String schoolID){
+        UserName = userName;
+        Name = name;
+        SchoolID = schoolID;
     }
 
     public User(){
-        UserName = new StringBuilder("匿名");
-        Name = new StringBuilder("");
-        SchoolID = new StringBuilder("");
+        UserName = "匿名";
+        Name = "";
+        SchoolID = "";
     }
 
     //读取设置学号
-    public void setSchoolID(StringBuilder schoolID) {
-        SchoolID = new StringBuilder(schoolID);
+    public void setSchoolID(String schoolID) {
+        SchoolID = schoolID;
     }
 
-    public StringBuilder getSchoolID() {
+    public String getSchoolID() {
         return SchoolID;
     }
 
 
     //读取设置学生真名
-    public void setName(StringBuilder name) {
-        Name = new StringBuilder(name);
+    public void setName(String name) {
+        Name = name;
     }
 
-    public StringBuilder getName() {
+    public String getName() {
         return Name;
     }
 
     //读取设置学生用户名
-    public void setUserName(StringBuilder userName) {
-        UserName = new StringBuilder(userName);
+    public void setUserName(String userName) {
+        UserName = userName;
     }
 
-    public StringBuilder getUserName() {
+    public String getUserName() {
         return UserName;
     }
 
