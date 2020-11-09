@@ -1,11 +1,22 @@
 package entity;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+import lombok.Data;
+
+@Data
+@ApiModel(description="用户实体")
 public class User implements Visitor {
 
+    @ApiModelProperty("用户登陆名")
     private String UserName;   //登陆时用的用户名
+    @ApiModelProperty("用户本人姓名")
     private String Name;       //本人真实姓名
+    @ApiModelProperty("用户学号")
     private String SchoolID;   //本人学号
+    @ApiModelProperty("用户密码")
     private String Password;
+    @ApiModelProperty("用户token（令牌）")
     private String Token;
 
     public User(String userName, String name, String schoolID, String token, String password){
@@ -51,10 +62,10 @@ public class User implements Visitor {
         Token = token;
     }
 
-    public String getPwd() {
+    public String getPassword() {
         return Password;
     }
-    public void setPwd(String password) {
+    public void setPassword(String password) {
         Password = password;
     }
 }
