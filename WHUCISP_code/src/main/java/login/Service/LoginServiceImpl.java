@@ -32,7 +32,7 @@ public class LoginServiceImpl implements LoginService{
     }
 
     public String return_login(){
-        return "login";
+        return "redirect:/login/login.html";
     }
 
     public String return_regist(){
