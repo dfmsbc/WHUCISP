@@ -16,7 +16,7 @@ import java.util.*;
 
 public class LoginDaoImpl implements LoginDao {
     private static Connection con = UserConnection.getConnection();
-    Map<String, User> userList = Collections.synchronizedMap(new HashMap<String, User>());
+
 
     @Override
     public Boolean insert(User user){
@@ -142,7 +142,7 @@ public class LoginDaoImpl implements LoginDao {
     public List<User> findAll(){
         try {
             PreparedStatement ps = con.prepareStatement("select * from Users");
-
+            Map<String, User> userList = Collections.synchronizedMap(new HashMap<String, User>());
             ResultSet rs = ps.executeQuery();
             while(rs.next()){
                 String username, Name, schoolid, Pwd, token;
@@ -209,14 +209,15 @@ public class LoginDaoImpl implements LoginDao {
     }
 
     @Override
-    public Boolean update(User user){
+    public Boolean update(User user, String schoolID){
         try{
-            PreparedStatement ps = con.prepareStatement("update Users set UserName = ?, Name = ?, Password = ?, Token = ? where SchoolID = ?");
+            PreparedStatement ps = con.prepareStatement("update Users set UserName = ?, Name = ?, Password = ?, Token = ?, SchoolID = ? where SchoolID = ?");
             ps.setString(1,user.getUserName());
             ps.setString(2,user.getName());
             ps.setString(3,user.getPassword());
             ps.setString(4,user.getToken());
             ps.setString(5,user.getSchoolID());
+            ps.setString(6,schoolID);
             int i = ps.executeUpdate();
             if (i==1){
                 return true;

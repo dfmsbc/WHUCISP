@@ -51,7 +51,8 @@ public class UserRestApiController {
      * @param schoolID
      * @return
      */
-    @GetMapping("/{schoolID}")@ApiOperation(value = "获取用户详细信息", notes = "根据url的schoolID来获取用户详细信息")
+    @GetMapping("/{schoolID}")
+    @ApiOperation(value = "获取用户详细信息", notes = "根据url的schoolID来获取用户详细信息")
     public User getUser(@PathVariable String schoolID) {
         return loginDao.findBySchoolID(schoolID);
     }
@@ -74,7 +75,7 @@ public class UserRestApiController {
         u.setToken(user.getToken());
         u.setUserName(user.getUserName());
 
-        loginDao.update(u);
+        loginDao.update(u, schoolID);
         return "success";
     }
 

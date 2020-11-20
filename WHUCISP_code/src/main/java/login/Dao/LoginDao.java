@@ -23,7 +23,7 @@ public interface LoginDao {
 
     User findBySchoolID(String schoolID);
 
-    Boolean update(User user);
+    Boolean update(User user, String schoolID);
 
     Boolean remove(String schoolID);
 }

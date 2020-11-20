@@ -2,12 +2,14 @@ package apply.Dao;
 
 import entity.Apply;
 import singleton.ChuShiConnection;
+import singleton.UserConnection;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 public class ApplyDaoImpl implements ApplyDao{
+
     private static Connection con = ChuShiConnection.getConnection();
 
     @Override
